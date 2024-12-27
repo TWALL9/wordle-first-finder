@@ -43,7 +43,13 @@ fn main() -> std::io::Result<()> {
     let mut sorted = Vec::new();
 
     for c in 'A'..='Z' {
-        words.insert(c, Wordle {letter: c, counts: [0; 5]});
+        words.insert(
+            c,
+            Wordle {
+                letter: c,
+                counts: [0; 5],
+            },
+        );
     }
 
     for line in read_to_string("wordle_answers.txt")?.lines() {
