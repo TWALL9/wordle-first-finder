@@ -77,6 +77,8 @@ fn print_sort(v: &mut Vec<&Wordle>, index: usize) {
     v.sort_by_key(|c| c.counts[index]);
     v.reverse();
 
+    print!("Letter: {:?} ", index + 1);
+
     for w in v[0..10].iter() {
         print!("{:?}: {:?}, ", w.letter, w.counts[index]);
     }
